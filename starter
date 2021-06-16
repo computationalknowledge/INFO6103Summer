@@ -1,0 +1,60 @@
+
+
+public class calculator{
+
+	public static void main(String args[]){
+		System.out.println("Starting Application");
+		MainApplication mainApp = new MainApplication();
+		mainApp.run();
+		// System.out.println(mainApp.answer);		
+		mainApp.PrintOutput();
+		System.out.println("fini");		
+	}
+}
+
+
+class MainApplication{
+	public Float [] answer = new Float[4];
+	Add a = new Add();
+	Subtract s = new Subtract();
+	Multiply m = new Multiply();
+	Divide d = new Divide();
+
+	public void run(){
+		answer[0] = a.doMath(2,2);
+		answer[1] = s.doMath(2,2);
+		answer[2] = m.doMath(2,2);
+		answer[3] = d.doMath(2,2);
+	}
+
+	public void PrintOutput(){
+		for (int i = 0; i< 4; i++){
+			System.out.println(answer[i]);
+		}
+	}
+}
+
+class Add{
+	public float doMath(float a, float b){
+		return a+b;
+	}
+}
+
+class Subtract{
+	public float doMath(float a, float b){
+		return a-b;
+	}
+}
+
+class Multiply{
+	public float doMath(float a, float b){
+		return a*b;
+	}
+	
+}
+
+class Divide{
+	public float doMath(float a, float b){
+		return a/b;
+	}
+}
